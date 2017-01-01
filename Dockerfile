@@ -1,5 +1,5 @@
 FROM python:3.5.2
-MAINTAINER 
+MAINTAINER Me <because.it.needs.atleast.1.arg>
 
 VOLUME /config
 VOLUME /code
