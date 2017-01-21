@@ -22,7 +22,7 @@ RUN curl -L https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
 RUN chmod a+rx /usr/local/bin/youtube-dl
 
 # Make my life easier
-RUN echo 'alias youtube-dl='/usr/local/bin/youtube-dl' >> ~/.bash_aliases
+RUN echo "alias youtube-dl='/usr/local/bin/youtube-dl'" >> ~/.bash_aliases
 
 # clean up
 RUN apt-get clean && \
