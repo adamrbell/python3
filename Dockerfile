@@ -6,16 +6,22 @@ VOLUME /code
 
 ENV TERM=xterm
 
-# install from pip
+# Install from pip
 RUN pip3 install --no-cache-dir sanic django
 
-# install utils
+# Install utils
+RUN apt-get update && \ 
+apt-get install -y \
+software-properties-common \
+python-software-properties \
+nano \
+curl
+
+# Add libav ppa and install
 RUN add-apt-repository ppa:heyarje/libav-11 -y && \
 apt-get update && \ 
 apt-get install -y \
-nano \
-libav-tools \
-curl
+libav-tools
 
 # Install youtube-DL
 RUN curl -L https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
